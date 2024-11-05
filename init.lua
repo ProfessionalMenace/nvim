@@ -14,3 +14,4 @@ vim.cmd.colorscheme("nightfox")
 lspconfig = require("lspconfig")
 lspconfig.clangd.setup{}
 lspconfig.rust_analyzer.setup{}
+lspconfig.zls.setup{}
