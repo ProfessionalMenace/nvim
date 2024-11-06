@@ -10,8 +10,12 @@ vim.o.number = true
 vim.o.wrap = false
 -- Colorscheme
 vim.cmd.colorscheme("nightfox")
+-- MASON
+require("mason").setup{}
+require("mason-lspconfig").setup{}
 -- LSP
 lspconfig = require("lspconfig")
 lspconfig.clangd.setup{}
 lspconfig.rust_analyzer.setup{}
 lspconfig.zls.setup{}
+
