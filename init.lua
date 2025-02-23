@@ -7,15 +7,17 @@ vim.o.shiftwidth = 4
 vim.o.expandtab = true
 vim.o.smartindent = true
 vim.o.number = true
-vim.o.wrap = false
+vim.o.linebreak = true
 -- Colorscheme
 vim.cmd.colorscheme("nightfox")
--- MASON
-require("mason").setup{}
-require("mason-lspconfig").setup{}
 -- LSP
 lspconfig = require("lspconfig")
-lspconfig.clangd.setup{}
+
+lspconfig.clangd.setup{
+    cmd = {"clangd", "--clang-tidy"},
+    init_options = {
+        fallbackFlags = { '-std=c++23' },
+    },
+}
 lspconfig.rust_analyzer.setup{}
-lspconfig.zls.setup{}
 
