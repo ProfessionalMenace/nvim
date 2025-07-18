@@ -1,5 +1,12 @@
 return {
   {
+    'saecki/crates.nvim',
+    tag = 'stable',
+    config = function()
+        require('crates').setup()
+    end,
+  },
+  {
     'neovim/nvim-lspconfig',
     config = function()
       -- CLANGD
@@ -10,10 +17,14 @@ return {
       vim.lsp.config('rust_analyzer', {
         settings = {
           ['rust-analyzer'] = {
-            diagnostics = {
-              enable = false;
-            }
-          }
+            checkOnSave = {
+            command = "clippy",
+              extraArgs = {"--workspace"},
+            },
+            procMacro = {
+              enable = true,
+            },
+          },
         }
       })
      end,
