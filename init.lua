@@ -33,3 +33,10 @@ vim.opt.spelllang = en_us;
 
 -- Autocompleteopt
 vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'fuzzy', 'popup' }
+
+-- Diagnostics
+vim.diagnostic.config({
+  virtual_lines = {
+    current_line = true,
+  },
+})
