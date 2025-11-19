@@ -1,25 +1,8 @@
 -- Lazy.nvim
 require('config.lazy')
-
--- Tabs
-vim.o.expandtab = true
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
-vim.o.smarttab = true
-vim.o.smartindent = true
-
--- Configuration
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.linebreak = true
-
--- Text wrapping
-vim.opt.wrap = true
-vim.opt.breakindent = true
-
-vim.o.winborder = 'rounded'
-vim.opt.splitright = true
-vim.opt.splitbelow = true
+require('config.options')
+require('config.clangd')
+require('config.rust_analyzer')
 
 -- Keymaps
 vim.g.mapleader = ' '
