@@ -1,8 +1,6 @@
--- Lazy.nvim
 require('config.lazy')
 require('config.options')
-require('config.clangd')
-require('config.rust_analyzer')
+require('config.lsp')
 
 -- Keymaps
 vim.g.mapleader = ' '
